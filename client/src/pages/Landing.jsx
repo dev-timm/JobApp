@@ -1,5 +1,3 @@
-import styles from '../styles/Landing.module.css';
-
 import { Logo } from '../components';
 
 const Landing = () => {

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+:root {
+  /* colors */
+  --primary: #b14bec;
+  --primary-light: #f7f0fb;
+  --grey900: #333;
+  --grey300: #777777;
+  --grey100: #f9fafb;
+  --white: #fff;
+
+  --background-color: var(--grey100);
+  --background-secondary-color: var(--white);
+  --text-color: var(--grey900);
+  --text-color-light: var(--grey300);
+  --link-color: var(--primary);
+
+  /* theme */
+  --dark-mode-bg-color: #333;
+  --dark-mode-text-color: #f0f0f0;
+  --dark-mode-bg-secondary-color: #3f3f3f;
+  --dark-mode-text-secondary-color: var(--grey-300);
+
+  /* layout */
+  --max-width: 1880px;
+  --nav-height: 6rem;
+  --border-radius: 0.5rem;
+
+  /* text */
+  --small-text: 0.875rem;
+  --extra-small-text: 0.7em;
+
+  /* animation */
+  --transition: 0.3s ease-in-out all;
+}
+
+body {
+  font-family: Inter, Helvetica, sans-serif;
+  background: var(--background-color);
+  color: var(--grey900);
+}
+
+.dark-theme {
+  --text-color: var(--dark-mode-text-color);
+  --background-color: var(--dark-mode-bg-color);
+  --text-secondary-color: var(--dark-mode-text-secondary-color);
+  --background-secondary-color: var(--dark-mode-bg-secondary-color);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.text-large {
+  font-size: 1.5rem;
+}
