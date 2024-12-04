@@ -1,4 +1,15 @@
+import styles from '../styles/Landing.module.css';
+
+import { Logo } from '../components';
+
 const Landing = () => {
-  return <h1>Landing Page</h1>;
+  return (
+    <>
+      <nav>
+        <Logo />
+      </nav>
+      <h1>Landing Page</h1>;
+    </>
+  );
 };
 export default Landing;
