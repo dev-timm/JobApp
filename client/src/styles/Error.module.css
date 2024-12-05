@@ -1,0 +1,16 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  margin-top: -2rem;
+  width: 40%;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1000px) {
+  .page {
+    width: 90%;
+  }
+}
