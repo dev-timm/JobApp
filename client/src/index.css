@@ -93,6 +93,10 @@ a {
 
 /* buttons */
 
+button {
+  all: unset; /* Resets all inherited and default browser styles */
+}
+
 .btn-primary {
   display: flex;
   height: 48px;

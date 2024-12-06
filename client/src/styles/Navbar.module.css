@@ -1,0 +1,38 @@
+.navbar {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-secondary-color);
+}
+
+.navCenter {
+  display: flex;
+  width: 90vw;
+  align-items: center;
+  justify-content: space-between;
+}
+.toggleBtn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1.75rem;
+  color: var(--primary-500);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
+  .navCenter {
+    width: 90%;
+  }
+}
