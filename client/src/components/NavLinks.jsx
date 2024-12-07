@@ -3,7 +3,7 @@ import links from '../utils/links';
 import { NavLink } from 'react-router-dom';
 import styles from '../styles/NavLinks.module.css';
 
-const NavLinks = () => {
+const NavLinks = ({ isBigSidebar }) => {
   const { toggleSidebar, user } = useDashboardContext();
   return (
     <div className={styles.navLinks}>
@@ -17,7 +17,7 @@ const NavLinks = () => {
             className={({ isActive }) =>
               isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
             }
-            onClick={toggleSidebar}
+            onClick={isBigSidebar ? null : toggleSidebar}
           >
             <span className={styles.icon}>{icon}</span>
             {text}
