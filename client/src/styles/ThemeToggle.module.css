@@ -1,0 +1,9 @@
+.themeContainer {
+  display: flex;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.toggleIcon {
+  color: var(--text-secondary-color);
+}

@@ -17,6 +17,7 @@ html {
   --primary: #b14bec;
   --primary-light: #f7f0fb;
   --grey900: #333;
+  --grey800: #525252;
   --grey300: #777777;
   --grey200: #eaeaea;
   --grey100: #f9fafb;
@@ -24,6 +25,7 @@ html {
 
   --background-color: var(--grey100);
   --background-secondary-color: var(--white);
+  --border-color: var(--grey200);
   --text-color: var(--grey900);
   --text-color-light: var(--grey300);
   --link-color: var(--primary);
@@ -32,7 +34,8 @@ html {
   --dark-mode-bg-color: #333;
   --dark-mode-text-color: #f0f0f0;
   --dark-mode-bg-secondary-color: #3f3f3f;
-  --dark-mode-text-secondary-color: var(--grey300);
+  --dark-mode-text-secondary-color: var(--grey100);
+  --dark-mode-border-color: var(--grey800);
 
   /* layout */
   --max-width: 1880px;
@@ -60,6 +63,7 @@ body {
   --background-color: var(--dark-mode-bg-color);
   --text-secondary-color: var(--dark-mode-text-secondary-color);
   --background-secondary-color: var(--dark-mode-bg-secondary-color);
+  --border-color: var(--dark-mode-border-color);
 }
 
 .container {

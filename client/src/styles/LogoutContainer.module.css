@@ -8,13 +8,8 @@
   justify-content: center;
   text-transform: capitalize;
   cursor: pointer;
+  color: var(--text-color);
   gap: 0.5rem;
-}
-
-.img {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
 }
 
 .dropdown {
@@ -24,9 +19,9 @@
   width: 100%;
   text-align: center;
   visibility: hidden;
-  border: 1px solid var(--grey200);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  background: var(--white);
+  background: var(--background-secondary-color);
 }
 
 .showDropdown {
