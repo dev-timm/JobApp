@@ -1,0 +1,43 @@
+.logoutContainer {
+  position: relative;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  border: 1px solid var(--grey200);
+  border-radius: var(--border-radius);
+  background: var(--white);
+}
+
+.showDropdown {
+  visibility: visible;
+}
+
+.dropdownBtn {
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+}
