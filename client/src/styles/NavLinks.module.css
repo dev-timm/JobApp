@@ -1,0 +1,26 @@
+.navLink {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary-color);
+  padding: 1rem 0;
+  text-transform: capitalize;
+  transition: var(--transition);
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.icon {
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navLink:hover .icon {
+  stroke: var(--primary); /* SVG stroke color changes on hover */
+}
+
+.active {
+  color: var(--primary);
+}

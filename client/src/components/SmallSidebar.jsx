@@ -1,10 +1,8 @@
 import { useDashboardContext } from '../pages/DashboardLayout';
 import styles from '../styles/SmallSidebar.module.css';
-
-import links from '../utils/links';
 import close from '../assets/close.svg';
 import Logo from './Logo';
-import { NavLink } from 'react-router-dom';
+import NavLinks from './NavLinks';
 
 const SmallSidebar = () => {
   const { showSidebar, toggleSidebar } = useDashboardContext();
@@ -28,27 +26,7 @@ const SmallSidebar = () => {
         <header>
           <Logo />
         </header>
-        <div className={styles.navLinks}>
-          {links.map((link) => {
-            const { text, path, icon } = link;
-            return (
-              <NavLink
-                to={path}
-                key={text}
-                end
-                className={({ isActive }) =>
-                  isActive
-                    ? `${styles.navLink} ${styles.active}`
-                    : styles.navLink
-                }
-                onClick={toggleSidebar}
-              >
-                <span className={styles.icon}>{icon}</span>
-                {text}
-              </NavLink>
-            );
-          })}
-        </div>
+        <NavLinks />
       </div>
     </div>
   );
