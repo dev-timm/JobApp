@@ -1,4 +1,4 @@
-import { body, validationResult } from 'express-validator';
+import { body, param, validationResult } from 'express-validator';
 import { BadRequestError } from '../errors/customErrors.js';
 import {
   JOB_STATUS,
@@ -6,6 +6,7 @@ import {
   REMOTE,
   SKILL_LEVEL,
 } from '../utils/constants.js';
+import mongoose from 'mongoose';
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -34,4 +35,10 @@ export const validateJobInput = withValidationErrors([
   body('skillLevel')
     .isIn(Object.values(SKILL_LEVEL))
     .withMessage('invalid skill level'),
+]);
+
+export const validateIdParam = withValidationErrors([
+  param('id')
+    .custom((value) => mongoose.Types.ObjectId.isValid(value))
+    .withMessage('invalid MongoDB id'),
 ]);
