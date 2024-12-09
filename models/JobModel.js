@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { JOB_STATUS, JOB_TYPE, REMOTE, SKILL_LEVEL } from '../utils/constants';
 
 const JobSchema = new mongoose.Schema(
   {
@@ -7,18 +8,18 @@ const JobSchema = new mongoose.Schema(
     salary: Number,
     jobStatus: {
       type: String,
-      enum: ['interview', 'declined', 'pending'],
-      default: 'pending',
+      enum: Object.values(JOB_STATUS),
+      default: JOB_STATUS.PENDING,
     },
     jobType: {
       type: String,
-      enum: ['full-time', 'part-time', 'internship', 'contract'],
-      default: 'full-time',
+      enum: Object.values(JOB_TYPE),
+      default: JOB_TYPE.FULL_TIME,
     },
     remote: {
       type: String,
-      enum: ['hybrid', 'on-site', 'remote'],
-      default: 'hybrid',
+      enum: Object.values(REMOTE),
+      default: REMOTE.HYBRID,
     },
     jobLocation: {
       type: String,
@@ -26,15 +27,8 @@ const JobSchema = new mongoose.Schema(
     },
     skillLevel: {
       type: String,
-      enum: [
-        'internship',
-        'entry level',
-        'associate',
-        'mid-senior level',
-        'director',
-        'executive',
-      ],
-      default: 'entry level',
+      enum: Object.values(SKILL_LEVEL),
+      default: SKILL_LEVEL.ASSOCIATE,
     },
   },
   { timestamps: true }
