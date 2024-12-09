@@ -1,5 +1,10 @@
 import mongoose from 'mongoose';
-import { JOB_STATUS, JOB_TYPE, REMOTE, SKILL_LEVEL } from '../utils/constants';
+import {
+  JOB_STATUS,
+  JOB_TYPE,
+  REMOTE,
+  SKILL_LEVEL,
+} from '../utils/constants.js';
 
 const JobSchema = new mongoose.Schema(
   {

@@ -1,5 +1,12 @@
 import { body, validationResult } from 'express-validator';
 import { BadRequestError } from '../errors/customErrors.js';
+import {
+  JOB_STATUS,
+  JOB_TYPE,
+  REMOTE,
+  SKILL_LEVEL,
+} from '../utils/constants.js';
+
 const withValidationErrors = (validateValues) => {
   return [
     validateValues,
@@ -14,11 +21,17 @@ const withValidationErrors = (validateValues) => {
   ];
 };
 
-export const validateTest = withValidationErrors([
-  body('name')
-    .notEmpty()
-    .withMessage('name is required')
-    .isLength({ min: 3, max: 50 })
-    .withMessage('name must be between 3 and 50 characters long')
-    .trim(),
+export const validateJobInput = withValidationErrors([
+  body('company').notEmpty().withMessage('company is required'),
+  body('position').notEmpty().withMessage('position is required'),
+  body('salary').notEmpty().withMessage('salary is required'),
+  body('jobLocation').notEmpty().withMessage('job location is required'),
+  body('jobStatus')
+    .isIn(Object.values(JOB_STATUS))
+    .withMessage('invalid status value'),
+  body('jobType').isIn(Object.values(JOB_TYPE)).withMessage('invalid job type'),
+  body('remote').isIn(Object.values(REMOTE)).withMessage('invalid remote type'),
+  body('skillLevel')
+    .isIn(Object.values(SKILL_LEVEL))
+    .withMessage('invalid skill level'),
 ]);
