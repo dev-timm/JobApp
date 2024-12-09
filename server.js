@@ -9,6 +9,9 @@ import mongoose from 'mongoose';
 // routers
 import jobRouter from './routers/jobRouter.js';
 
+// middleware
+import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
+
 // makes sure morgan only runs in development not in production
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
@@ -36,11 +39,7 @@ app.use('*', (req, res) => {
   res.status(404).json({ msg: 'not found' });
 });
 
-// ERROR MIDDLEWARE
-app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(500).json({ msg: 'something went wrong' });
-});
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5100;
 try {
