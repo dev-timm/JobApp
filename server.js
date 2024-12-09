@@ -1,3 +1,4 @@
+import 'express-async-errors'; // is an Express.js middleware that helps handle errors that occur within asynchronous functions
 import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
