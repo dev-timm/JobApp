@@ -35,6 +35,10 @@ const JobSchema = new mongoose.Schema(
       enum: Object.values(SKILL_LEVEL),
       default: SKILL_LEVEL.ASSOCIATE,
     },
+    createdBy: {
+      type: mongoose.Types.ObjectId,
+      ref: 'User',
+    },
   },
   { timestamps: true }
 );
