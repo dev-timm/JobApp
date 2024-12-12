@@ -1,9 +1,23 @@
-import { Form, Link } from 'react-router-dom';
+import { Form, redirect, useNavigation, Link } from 'react-router-dom';
 import { FormRow, Logo } from '../components';
+import customFetch from '../utils/customFetch';
 
 import styles from '../styles/RegisterAndLogin.module.css';
 
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  try {
+    await customFetch.post('/auth/register', data);
+    return redirect('/login');
+  } catch (error) {
+    return error;
+  }
+};
+
 const Register = () => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
   return (
     <>
       <nav>
@@ -42,8 +56,12 @@ const Register = () => {
           placeholder="Enter pasword"
           defaultValue="secret123"
         />
-        <button type="submit" className="btn-medium-primary btn-form">
-          Sign Up
+        <button
+          type="submit"
+          className="btn-medium-primary btn-form"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
         <p>
           Already a user?{' '}
