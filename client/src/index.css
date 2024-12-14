@@ -128,7 +128,7 @@ button {
 .btn-medium-primary {
   display: flex;
   height: 40px;
-  padding: 12px 16px;
+  padding: 0 16px;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--primary);
@@ -190,6 +190,10 @@ button {
   margin-bottom: 1rem;
 }
 
+.form-title {
+  margin-bottom: 1.5rem;
+}
+
 .form-label {
   display: block;
   font-size: var(--small-text);
@@ -219,6 +223,32 @@ input:hover {
 }
 
 input:focus {
+  border-radius: 9px;
+  border: 1px solid var(--primary);
+  outline: none; /* Remove default browser outline */
+}
+
+select {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--grey200);
+  background: var(--background-secondary-color);
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+select:hover {
+  border: 1px solid var(--primary);
+  box-shadow: 0px 4px 6px -4px rgba(10, 9, 13, 0.08),
+    0px 8px 8px -4px rgba(10, 9, 13, 0.04);
+}
+
+select:focus {
   border-radius: 9px;
   border: 1px solid var(--primary);
   outline: none; /* Remove default browser outline */
